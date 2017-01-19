@@ -21,14 +21,16 @@
  var total = "";
 
  database.ref().on("value", function(snapshot) {
-$("#placeholderID").html(employeeName);
-$("#placeholderID").html(role);
-$("#placeholderID").html(startDate);
-$("#placeholderID").html(monthlyRate);
-$("#placeholderID").hmtl(monthsWorked);
-$().html(total); 
- });
-$("#header").append("hello world");
+
+$("#employeeName").html(employeeName);
+$("#role").html(role);
+$("#startDate").html(startDate);
+$("#monthlyRate").html(monthlyRate);
+$("#monthsWorked").hmtl(monthsWorked);
+$("#total").html(total); 
+ }
+
+
 $("#submit").on("click", function(event) {
 	event.preventDefault();
 	employeeName = $("#employeeName").val();
@@ -61,7 +63,7 @@ database.ref().push({
 		startDate: startDate,
 		monthsWorked: monthsWorked,
 		monthlyRate: monthlyRate,
-		total: total,
+		total: total
 	})
 
 });
