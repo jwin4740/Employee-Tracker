@@ -55,12 +55,12 @@ newTableRow.append(newTableTotal);
 $("#employeeTable").append(newTableRow);
 
 database.ref().push({
-		employeeName: employeeName
-		role: role
-		startDate: startDate
-		monthsWorked: monthsWorked
-		monthlyRate: monthlyRate
-		total: total
+		employeeName: employeeName,
+		role: role,
+		startDate: startDate,
+		monthsWorked: monthsWorked,
+		monthlyRate: monthlyRate,
+		total: total,
 	})
 
 }
