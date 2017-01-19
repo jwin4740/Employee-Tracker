@@ -28,7 +28,7 @@ $("#startDate").html(startDate);
 $("#monthlyRate").html(monthlyRate);
 $("#monthsWorked").hmtl(monthsWorked);
 $("#total").html(total); 
- }
+ 
 
 
 $("#submit").on("click", function(event) {
@@ -56,6 +56,7 @@ newTableRow.append(newTableMonthsWorked);
 newTableRow.append(newTableTotal);
 
 $("#employeeTable").append(newTableRow);
+console.log(newTableRow);
 
 database.ref().push({
 		employeeName: employeeName,
@@ -64,7 +65,7 @@ database.ref().push({
 		monthsWorked: monthsWorked,
 		monthlyRate: monthlyRate,
 		total: total
-	})
+	});
 
 });
 
