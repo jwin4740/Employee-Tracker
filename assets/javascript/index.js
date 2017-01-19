@@ -35,10 +35,10 @@ $("#onclickplaceholder").on("click", function(event) {
 	monthsWorked = parseInt($("#placeholderID").val());
 
 	database.ref().push({
-		employeeName: employeeName
-		role: role
-		startDate: startDate
-		monthsWorked: monthsWorked
+		employeeName: employeeName,
+		role: role,
+		startDate: startDate,
+		monthsWorked: monthsWorked,
 		monthlyRate: monthlyRate
 	})
 	

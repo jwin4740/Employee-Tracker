@@ -6,6 +6,7 @@
     storageBucket: "employeedata-24406.appspot.com",
     messagingSenderId: "218223176307"
   };
+  
   firebase.initializeApp(config);
 
  var database = firebase.database();
@@ -26,8 +27,8 @@ $("#placeholderID").html(startDate);
 $("#placeholderID").html(monthlyRate);
 $("#placeholderID").hmtl(monthsWorked);
 $().html(total); 
- }
-
+ });
+$("#header").append("hello world");
 $("#submit").on("click", function(event) {
 	event.preventDefault();
 	employeeName = $("#employeeName").val();
@@ -63,5 +64,5 @@ database.ref().push({
 		total: total,
 	})
 
-}
+});
 
