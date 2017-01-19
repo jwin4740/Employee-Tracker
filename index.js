@@ -12,11 +12,12 @@
 
  //inital values - 
 
- var employeeName
- var role
- var startDate
- var monthsWorked
- var monthlyRate
+ var employeeName = "";
+ var role = "";
+ var startDate = "";
+ var monthsWorked = "";
+ var monthlyRate = "";
+ var total = "";
 
  database.ref().on("value", function(snapshot) {
 $("#placeholderID").html(employeeName);
@@ -24,23 +25,43 @@ $("#placeholderID").html(role);
 $("#placeholderID").html(startDate);
 $("#placeholderID").html(monthlyRate);
 $("#placeholderID").hmtl(monthsWorked);
+$().html(total); 
  }
 
-$("#onclickplaceholder").on("click", function(event) {
+$("#submit").on("click", function(event) {
 	event.preventDefault();
-	employeeName = $("#placeholderID").val();
-	role = $("#placeholderID").val();
-	startDate = parseInt($("#placeholderID").val());
-	monthlyRate = parseInt($("#placeholderID").val());
-	monthsWorked = parseInt($("#placeholderID").val());
+	employeeName = $("#employeeName").val();
+	role = $("#role").val();
+	startDate = parseInt($("#startDate").val());
+	monthlyRate = parseInt($("#monthlyRate").val());
+	monthsWorked = parseInt($("#monthsWorked").val());
+	total = parseInt($("#total").val());
 
-	database.ref().push({
+var newTableRow = $("<tr>");
+var newTableEmployeeName = $("<td>" + employeeName + "</td>"); 
+var newTableRole = $("<td>" + role + "</td>");
+var newTableStartDate = $("<td>" + startDate + "</td>");
+var newTableMonthlyRate = $("<td>" + monthlyRate + "</td>");
+var newTableMonthsWorked = $("<td>" + monthsWorked + "</td>");
+var newTableTotal = $("<td>" + total + "</td>");
+
+newTableRow.append(newTableEmployeeName);
+newTableRow.append(newTableRole);
+newTableRow.append(newTableStartDate);
+newTableRow.append(newTableMonthlyRate);
+newTableRow.append(newTableMonthsWorked);
+newTableRow.append(newTableTotal);
+
+$("#employeeTable").append(newTableRow);
+
+database.ref().push({
 		employeeName: employeeName
 		role: role
 		startDate: startDate
 		monthsWorked: monthsWorked
 		monthlyRate: monthlyRate
+		total: total
 	})
-	
+
 }
 
